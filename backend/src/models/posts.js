@@ -3,29 +3,19 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-  title: {
-    type: String,
-    required: true
-  },
   description: {
-    type: String,
-  },
-  location: {
     type: String,
     required: true
   },
   picture: {
-    type: "Picture",
+    type: Schema.Types.ObjectId,
+    ref: "Picture",
     required: true
   },
-  likes: {
-    type: [Users],
-    default: [],
-  },
-  posted_at: {
-    type: Date,
-    default: new Date()
-  }
-});
+  likers: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Users'
+  }]
+},{ timestamps: true });
 
 export default mongoose.model('Post', postSchema);
