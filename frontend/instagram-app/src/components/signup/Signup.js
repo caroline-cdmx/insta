@@ -3,7 +3,7 @@ import './style.css';
 import signup from '../../services/signup';
 
 
-class SignUp extends Component {
+class Signup extends Component {
   constructor() {
     super();
     this.state = {
@@ -98,3 +98,5 @@ class SignUp extends Component {
     )
   }
 }
+
+export default Signup;
