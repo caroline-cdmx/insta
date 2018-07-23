@@ -8,11 +8,8 @@ import Signup from './components/signup/Signup';
 import Home from './components/home/Home';
 import Nav from './components/nav/Nav';
 
-class Routes extends Component {
-  
-  render () {
-    return (
-      <Router>
+const Routes = () => (
+  <Router>
         <main>
           <Nav/>
           <Route exact path='/' component ={Home}/>
@@ -20,9 +17,6 @@ class Routes extends Component {
           <Route exact path='/signup' component ={Signup}/>
         </main>
       </Router>
-
-    )
-  }
-}
+)
 
 export default Routes; 

@@ -3,7 +3,8 @@ import {
   GraphQLString,
   GraphQLID,
   GraphQLObjectType,
-  GraphQLNonNull
+  GraphQLNonNull,
+  GraphQLList
 } from 'graphql'
 
 import User from '../../models/users';
@@ -15,27 +16,32 @@ export const UserType = new GraphQLObjectType({
     _id:{
       type:GraphQLNonNull(GraphQLID)
     },
-    name:{
+    firstName:{
       type:GraphQLString
     },
-    lastname:{
+    lastName:{
       type:GraphQLString
     },
     email:{
       type:GraphQLString
     },
-    is_admin:{
-      type:GraphQLBoolean
+    photo: {
+      type: Schema.Types.ObjectId,
+      ref: "Picture"
     },
-    create_at:{
-      type:GraphQLString
+    followers: {
+      type: new GraphQLList(UserType),
+      resolve: (user) => user.followers
     },
-    is_active:{
-      type:GraphQLBoolean
+    following: {
+      type: new GraphQLList(UserType),
+      resolve: (user) => user.following
+      
     },
-    client_id:{
-      type:GraphQLString
-    },
+    posts:{
+      type: new GraphQLList(PostType),
+      resolve: (user) => user.posts
+    }
 
   })
 });
@@ -44,13 +50,10 @@ export const UserInputType = new GraphQLInputObjectType({
   name: "AddUsers",
   description: "Agrega, modifica nuevos usuarios a la bd",
   fields: () => ({
-    _id:{
-      type:GraphQLNonNull(GraphQLID)
-    },
-    name:{
+    firstName:{
       type:GraphQLString
     },
-    lastname:{
+    lastName:{
       type:GraphQLString
     },
     password:{
@@ -60,10 +63,8 @@ export const UserInputType = new GraphQLInputObjectType({
       type:GraphQLString
     },
     photo:{
-      type:GraphQLString
+      type:GraphQLID
     }
-    
-
   })
 })
 

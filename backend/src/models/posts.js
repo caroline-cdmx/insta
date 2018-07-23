@@ -12,6 +12,10 @@ const postSchema = new Schema({
     ref: "Picture",
     required: true
   },
+  location: {
+    type: [Number,Number],
+    index: "2d"
+  },
   likers: [{
     type: Schema.Types.ObjectId,
     ref: 'Users'

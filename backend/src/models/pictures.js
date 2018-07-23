@@ -3,7 +3,10 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const pictureSchema = new Schema({
-  img: { data: Buffer, contentType: String }
+  url: {
+    type: String,
+    required: true
+  }
 });
 
 export default mongoose.model('Picture', pictureSchema);

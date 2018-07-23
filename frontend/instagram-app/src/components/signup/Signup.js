@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './style.css';
 import signup from '../../services/signup';
 
 
-class Signup extends Component {
+class Signup extends PureComponent {
   constructor() {
     super();
     this.state = {
