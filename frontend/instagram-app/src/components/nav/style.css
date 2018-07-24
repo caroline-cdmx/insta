@@ -1,3 +1,29 @@
 .navbar {
   border-bottom: 1px solid #B0B0B0;
+  height: 4rem;
+}
+.navbar-brand {
+  margin-left: 1rem;
+}
+
+.form-inline {
+  width: 650px;
+}
+.form-inline .form-control {
+  width: 300px;
+}
+
+a {
+  color: #262626;
+}
+a:hover {
+  color: #ae00bb;
+  border-bottom: 0.1rem solid #ae00bb;
+
+}
+.brand-name:hover {
+ color: #ff841d;
+ border-bottom: none;
+ cursor: pointer;
+ 
 }

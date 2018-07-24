@@ -8,7 +8,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Clone Instagram</h1>
+        <h1></h1>
       </div>
     )
   }
