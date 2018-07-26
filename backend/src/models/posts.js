@@ -7,9 +7,8 @@ const postSchema = new Schema({
     type: String,
     required: true
   },
-  picture: {
-    type: Schema.Types.ObjectId,
-    ref: "Picture",
+  image_url: {
+    type: String,
     required: true
   },
   location: {

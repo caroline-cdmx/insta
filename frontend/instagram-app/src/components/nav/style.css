@@ -15,10 +15,11 @@
 
 a {
   color: #262626;
+  border-bottom: 1px solid transparent;
 }
 a:hover {
   color: #ae00bb;
-  border-bottom: 0.1rem solid #ae00bb;
+  border-bottom: 1px solid #ae00bb;
 
 }
 .brand-name:hover {
