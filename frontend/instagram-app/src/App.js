@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Routes from './Routes';
 import Nav from './components/nav/Nav';
+import Post from './components/post/Post';
 
 class App extends Component {
   render() {
