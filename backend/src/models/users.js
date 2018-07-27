@@ -26,8 +26,14 @@ const UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Picture"
   },
-  followers: [this],
-  following: [this],
+  followers: [{
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'User'
+  }],
+  following: [{
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'User'
+  }],
   posts:[{
     type: Schema.Types.ObjectId,
     ref: "Post"
@@ -50,10 +56,8 @@ UserSchema.pre('save', function (next) {
   })
 })
 
-UserSchema.methods.comparePassword = function (candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
-    cb(null, isMatch)
-  })
+UserSchema.methods.comparePassword = async function (candidatePassword, cb) {
+  return await bcrypt.compare(candidatePassword, this.password)
 }
 
 //TODO: Aqui voy a agregar el 'trigger' o hasheo de password

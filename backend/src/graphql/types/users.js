@@ -13,21 +13,20 @@ export const UserType = new GraphQLObjectType({
   name: "Users",
   description: "Usuarios de la BD",
   fields: () => ({
-    _id:{
-      type:GraphQLNonNull(GraphQLID)
+    _id: {
+      type: GraphQLNonNull(GraphQLID)
     },
-    firstName:{
-      type:GraphQLString
+    firstName: {
+      type: GraphQLString
     },
-    lastName:{
-      type:GraphQLString
+    lastName: {
+      type: GraphQLString
     },
-    email:{
-      type:GraphQLString
+    email: {
+      type: GraphQLString
     },
-    photo: {
-      type: Schema.Types.ObjectId,
-      ref: "Picture"
+    photoUrl: {
+      type: GraphQLString
     },
     followers: {
       type: new GraphQLList(UserType),
@@ -36,9 +35,9 @@ export const UserType = new GraphQLObjectType({
     following: {
       type: new GraphQLList(UserType),
       resolve: (user) => user.following
-      
+
     },
-    posts:{
+    posts: {
       type: new GraphQLList(PostType),
       resolve: (user) => user.posts
     }
@@ -50,20 +49,20 @@ export const UserInputType = new GraphQLInputObjectType({
   name: "AddUsers",
   description: "Agrega, modifica nuevos usuarios a la bd",
   fields: () => ({
-    firstName:{
-      type:GraphQLString
+    firstName: {
+      type: GraphQLString
     },
-    lastName:{
-      type:GraphQLString
+    lastName: {
+      type: GraphQLString
     },
-    password:{
+    password: {
       typeGraphQLString
     },
-    email:{
-      type:GraphQLString
+    email: {
+      type: GraphQLString
     },
-    photo:{
-      type:GraphQLID
+    photo: {
+      type: GraphQLID
     }
   })
 })
