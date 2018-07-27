@@ -41,15 +41,15 @@ class Login extends PureComponent {
         <div className="row">
           <div className="col-md-4 offset-md-4">
             <div className="card p-4 px-5">
-              <form>
+              <form onSubmit={this.submitForm}>
                   <div className="d-flex justify-content-center">
                     <img className= "insta-name" src="http://pngimg.com/uploads/instagram/instagram_PNG5.png" alt="instagram name"/>
                   </div>
                   <div className="form-group">
-                    <input type="email" className="form-control" id="exampleDropdownFormEmail2" placeholder="correio@ejemplo.com"/>
+                    <input type="email" name="email" className="form-control"  value={this.state.email} onChange={this.onInputCheck} id="exampleInputEmail1" placeholder="correio@ejemplo.com"/>
                   </div>
                   <div className="form-group">
-                    <input type="password" className="form-control" id="exampleDropdownFormPassword2" placeholder="contraseña"/>
+                    <input type="password" name="password" className="form-control" value={this.state.password} onChange={this.onInputCheck} id="exampleInputPassword1" placeholder="contraseña"/>
                   </div>
                   <button type="submit" className="btn btn-primary btn-block">Regístrate</button>
                 </form>
@@ -63,7 +63,7 @@ class Login extends PureComponent {
           <div className="col-md-4 offset-md-4">
             <div className="card p-4 px-5">
               <form>
-                <p className="no-account">¿No tienes cuenta?</p><a className="create-account" href="#">Inscribirse</a> 
+                <p className="no-account">¿No tienes cuenta?</p><a className="create-account" href="/signup">Inscribirse</a> 
               </form>
             </div>
           </div>

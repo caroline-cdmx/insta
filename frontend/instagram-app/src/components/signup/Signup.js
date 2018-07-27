@@ -51,21 +51,24 @@ class Signup extends PureComponent {
         <div className="row">
           <div className="col-md-4 offset-md-4">
             <div className="card p-4 px-5">
-              <form>
+              <form role="form" onSubmit={this.onFormSubmit}>
                   <div className="d-flex justify-content-center">
                     <img className= "insta-name" src="http://pngimg.com/uploads/instagram/instagram_PNG5.png" alt="instagram name"/>
                   </div>
                   <div className="form-group">
-                    <input type="email" className="form-control" id="exampleDropdownFormEmail2" placeholder="Correio o numero de celular"/>
+                    <input type="email" name="email" className="form-control" id="email" placeholder="correio@ejemplo.com" value={this.state.email} onChange={this.onInputCheck}/>
                   </div>
                   <div className="form-group">
-                    <input type="name" className="form-control" id="exampleDropdownFormPassword2" placeholder="Nombre completo"/>
+                    <input type="name" name="firstName" className="form-control" id="name" placeholder="Nombre completo" value={this.state.firstName} onChange={this.onInputCheck}/>
                   </div>
                   <div className="form-group">
-                    <input type="password" className="form-control" id="exampleDropdownFormPassword2" placeholder="Nombre de usuario"/>
+                    <input type="username" name="lastName" className="form-control" id="username" placeholder="Nombre de usuario" value={this.state.lastName} onChange={this.onInputCheck}/>
                   </div>
                   <div className="form-group">
-                    <input type="password" className="form-control" id="exampleDropdownFormPassword2" placeholder="Contraseña"/>
+                    <input type="password" className="form-control" name="password" id="password" placeholder="Contraseña"  value={this.state.password} onChange={this.onInputCheck}/>
+                  </div>
+                  <div className="form-group">
+                    <input type="password" className="form-control" name="check_password" id="check_password" placeholder="Confirmar contraseña"  value={this.state.check_password} onChange={this.onInputCheck}/>
                   </div>
                   <button type="submit" className="btn btn-primary btn-block">Crear cuenta</button>
                 </form>
@@ -76,7 +79,7 @@ class Signup extends PureComponent {
           <div className="col-md-4 offset-md-4">
             <div className="card p-4 px-5">
               <form>
-                <p className="no-account">¿Ya tienes cuenta?</p><a className="create-account" href="#">Conectarse</a> 
+                <p className="no-account">¿Ya tienes cuenta?</p><a className="create-account" href="/login">Conectarse</a> 
               </form>
             </div>
           </div>
