@@ -9,9 +9,9 @@ import { UserType } from '../../types/users';
 const queryAllUsers = {
   type: new GraphQLList(UserType), 
   async resolve () {
-    const User = await User.find()
-    return User
+    const users = await User.find()
+    return users
   }
 }
 
-export default queryAllPosts;
+export default queryAllUsers;

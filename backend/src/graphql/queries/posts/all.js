@@ -2,7 +2,7 @@ import {
   GraphQLList
 } from 'graphql';
 
-import Post from '../../../models/posts';
+import Posts from '../../../models/posts';
 import { PostType } from '../../types/posts';
 
 

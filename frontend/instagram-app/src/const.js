@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default {
-  url:''
+  url:'https://insta-back-caro.herokuapp.com/'
 }

@@ -1,7 +1,7 @@
-import users from './users';
-import posts from './posts';
+import Users from './users';
+import Posts from './posts';
 
 export default {
-    ...posts,
-    ...users
+    ...Users, 
+    ...Posts
 }
