@@ -6,8 +6,8 @@ const Nav = () => (
     <div className="container">
       <div className="row">
         <a className="brand-name col-3">
-          <i className="fab fa-instagram fa-2x"></i>
-          <span className="navbar-brand text-dark" href="#">Instagram</span>
+          <i className="fab fa-instagram fa-2x align-middle"></i>
+          <img className= "insta" src="http://pngimg.com/uploads/instagram/instagram_PNG5.png" alt="instagram name"/>
         </a>
         
         <form className="form-inline col-4">

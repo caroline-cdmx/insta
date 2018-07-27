@@ -47,54 +47,41 @@ class Signup extends PureComponent {
 
   render() {
     return (
-      <div className="container">
-        <div className="row justify-content-center centered-form ">
-          <div className="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2">
-            <div className="panel panel-default container">
-              <div className="panel-heading">
-                <h3 className="panel-title">Signup</h3>
-              </div>
-              <div className="panel-body">
-                <form role="form" onSubmit={this.onFormSubmit}>
-                  <div className="row">
-                    <div className="col-xs-6 col-sm-6 col-md-6">
-                      <div className="form-group">
-                        <input type="text" name="firstname" id="firstname" className="form-control input-sm" placeholder="First Name" value={this.state.firstname}
-                          onChange={this.onInputCheck} />
-                      </div>
-                    </div>
-                    <div className="col-xs-6 col-sm-6 col-md-6">
-                      <div className="form-group">
-                        <input type="text" name="lastname" id="name" className="form-control input-sm" placeholder="Last Name" value={this.state.lastname} onChange={this.onInputCheck} />
-                      </div>
-                    </div>
+      <div className="container container--content">
+        <div className="row">
+          <div className="col-md-4 offset-md-4">
+            <div className="card p-4 px-5">
+              <form>
+                  <div className="d-flex justify-content-center">
+                    <img className= "insta-name" src="http://pngimg.com/uploads/instagram/instagram_PNG5.png" alt="instagram name"/>
                   </div>
-
                   <div className="form-group">
-                    <input type="email" name="email" id="email" className="form-control input-sm" placeholder="Email Address" value={this.state.email} onChange={this.onInputCheck} />
+                    <input type="email" className="form-control" id="exampleDropdownFormEmail2" placeholder="Correio o numero de celular"/>
                   </div>
-
-                  <div className="row">
-                    <div className="col-xs-6 col-sm-6 col-md-6">
-                      <div className="form-group">
-                        <input type="password" name="password" id="password" className="form-control input-sm" placeholder="Password" value={this.state.password} onChange={this.onInputCheck} />
-                      </div>
-                    </div>
-                    <div className="col-xs-6 col-sm-6 col-md-6">
-                      <div className="form-group">
-                        <input type="password" name="check_password" id="check_password" className="form-control input-sm" placeholder="Confirm Password" value={this.state.check_password} onChange={this.onInputCheck} />
-                      </div>
-                    </div>
+                  <div className="form-group">
+                    <input type="name" className="form-control" id="exampleDropdownFormPassword2" placeholder="Nombre completo"/>
                   </div>
-
-                  <input type="submit" value="Register" className="btn btn-info btn-block" />
-
+                  <div className="form-group">
+                    <input type="password" className="form-control" id="exampleDropdownFormPassword2" placeholder="Nombre de usuario"/>
+                  </div>
+                  <div className="form-group">
+                    <input type="password" className="form-control" id="exampleDropdownFormPassword2" placeholder="Contraseña"/>
+                  </div>
+                  <button type="submit" className="btn btn-primary btn-block">Crear cuenta</button>
                 </form>
-              </div>
             </div>
           </div>
         </div>
-      </div>
+        <div className="row row--login">
+          <div className="col-md-4 offset-md-4">
+            <div className="card p-4 px-5">
+              <form>
+                <p className="no-account">¿Ya tienes cuenta?</p><a className="create-account" href="#">Conectarse</a> 
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
     )
   }
 }

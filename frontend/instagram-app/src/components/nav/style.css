@@ -6,7 +6,18 @@
 .navbar-brand {
   margin-left: 1rem;
 }
-
+.brand-name {
+  border: 1px solid transparent;
+}
+.fa-instagram {
+  padding-right: 1rem;
+  border-right: 1px solid black;
+  
+}
+.insta {
+  height: 3rem; 
+  padding-left: 1rem;
+}
 
 .form-inline {
   width: 650px;
