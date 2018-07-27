@@ -52,25 +52,25 @@ app.get('/', (req, res) => {
   res.send("Estoy funcionando :)");
 })
 
-// //Middleware para proteger graphql 
-// app.use('./graphql', (req, res, next) => {
-//   const token = req.headers['authorization'];
-//   try {
-//     req.user = verifyToken(token)
-//     next();
-//   } catch (error) {
-//     res.status(401).json({ message: error.message })
-//   }
-// })
+//Middleware para proteger graphql 
+app.use('./graphql', (req, res, next) => {
+  const token = req.headers['authorization'];
+  try {
+    req.user = verifyToken(token)
+    next();
+  } catch (error) {
+    res.status(401).json({ message: error.message })
+  }
+})
 
-// app.use('/graphql', graphQLHTTP((req, res) => ({
-//   schema,
-//   graphiql: true,
-//   pretty: true,
-//   context: {
-//     user: req.user
-//   }
-// })))
+app.use('/graphql', graphQLHTTP((req, res) => ({
+  schema,
+  graphiql: true,
+  pretty: true,
+  context: {
+    user: req.user
+  }
+})))
 
 app.listen(PORT, () => {
   console.log(`Magic happens in port ${PORT}`);
