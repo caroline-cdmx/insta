@@ -3,9 +3,6 @@
   height: 4rem;
   background-color: white;
 }
-.navbar-brand {
-  margin-left: 1rem;
-}
 .brand-name {
   border: 1px solid transparent;
 }
@@ -22,8 +19,16 @@
 .form-inline {
   width: 650px;
 }
+
 .form-inline .form-control {
   width: 300px;
+  background-color: #fafafa;
+}
+.form-inline .form-control:focus {
+  background-color: White;
+}
+::-webkit-input-placeholder {
+  text-align: center;
 }
 li {
   margin-right: 2rem;

@@ -20,7 +20,8 @@ class Post extends Component {
                 <img className="insta-image" src="https://imagenescityexpress.scdn6.secure.raxcdn.com/sites/default/files/Fotolia_68533084_Subscription_XL.jpg" alt="Card image cap"/>
               </div>
                 <div className="card-body description">
-                  <i className="heart fal fa-heart fa-2x"></i>
+                  <input className="heart fal fa-heart fa-2x" type="radio" aria-label="Radio button for following text input"/>
+                  <i ></i>
                   <p className="card-text">Cancún</p>
                   <p className="card-text">#holidays</p>
                 </div>

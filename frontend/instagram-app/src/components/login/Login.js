@@ -54,7 +54,7 @@ class Login extends PureComponent {
                   <button type="submit" className="btn btn-primary btn-block">Regístrate</button>
                 </form>
                 <div className="d-flex justify-content-center">
-                  <a>¿Olvidaste tu contraseña?</a>
+                  <a href="#" className="forget-password">¿Olvidaste tu contraseña?</a>
                 </div>
             </div>
           </div>
