@@ -11,7 +11,7 @@ export default {
           type: new GraphQLNonNull(PostInputType)
       }
   },
-  resolve(root,params){
+  resolve (root,params){
       const post = new Post(params.data);
       const newPost = post.save();
       if(!newPost) throw new Error('Error al crear un usuario');

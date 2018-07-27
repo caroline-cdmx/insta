@@ -27,14 +27,14 @@ const UserSchema = new Schema({
     ref: "Picture"
   },
   followers: [{
-    type: mongoose.Schema.Types.ObjectId, 
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   }],
   following: [{
-    type: mongoose.Schema.Types.ObjectId, 
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   }],
-  posts:[{
+  posts: [{
     type: Schema.Types.ObjectId,
     ref: "Post"
   }]
@@ -62,4 +62,4 @@ UserSchema.methods.comparePassword = async function (candidatePassword, cb) {
 
 //TODO: Aqui voy a agregar el 'trigger' o hasheo de password
 
-export default mongoose.model('Users', UserSchema);
+export default mongoose.model('User', UserSchema);

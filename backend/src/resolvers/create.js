@@ -30,6 +30,7 @@ export const createToken = async (email, password) => {
       const token = jwt.sign(payload, secret, {
         expiresIn
       });
+      console.log('there there::::::::',token )
       return token
     }
   } catch (err) {

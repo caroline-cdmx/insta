@@ -7,6 +7,7 @@ import {
   GraphQLNumber
 } from 'graphql'
 
+import { UserType } from './users';
 
 export const PostType = new GraphQLObjectType({
   name: "ListPosts",
@@ -22,7 +23,8 @@ export const PostType = new GraphQLObjectType({
       type: [ GraphQLNumber, GraphQLNumber ]
     },
     likers: {
-      type: Schema.Types.ObjectId
+      type: new GraphQLList(UserType),
+      resolve: (post) => post.likers
     }
   })
 });

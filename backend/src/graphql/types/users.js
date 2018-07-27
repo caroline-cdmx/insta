@@ -7,7 +7,8 @@ import {
   GraphQLList
 } from 'graphql'
 
-import User from '../../models/users';
+import { PostType } from './posts';
+
 
 export const UserType = new GraphQLObjectType({
   name: "Users",
